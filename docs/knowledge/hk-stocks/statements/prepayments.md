@@ -48,6 +48,7 @@ source_qa:
 
 - [港股财报结构](./index.md)
 - [关联公司欠款](./related-party-balances.md)（同属"给出去的信用"）
+- [合约负债](./contract-liabilities.md)（镜像科目：占用下游的资金）
 - [A股资产负债表](../../a-shares/statements/balance-sheet.md)（A股"预付款项"与"长期待摊费用"的对应关系）
 
 ## 相关答疑
