@@ -1,0 +1,100 @@
+# AGENTS.md — AI 协作总纲
+
+> 任何 AI 助手（ZCode / Claude / GPT / Gemini / GLM 等）或人类协作者接手本仓库时，**必须先读完本文件**，写作细节再对照 [docs/guide/conventions.md](docs/guide/conventions.md)。
+
+## 1. 这个仓库是什么
+
+个人投资学习知识库 + 自动发布的静态站点，三件事：
+
+1. **知识字典**：投资指标 / 报表 / 概念的词典，按市场分模块（A股 / 港股 / 通用）。一个词条讲清：是什么、怎么来的、在财报哪里看、由哪次提问创建或更新。
+2. **答疑笔记**：仓库所有者提问驱动的问答归档，按年月存放、时间倒序索引。答疑笔记是"日志"，词典词条是"沉淀"——一个问题可能同时产生两者。
+3. **财报档案**：年报、业绩公告等 PDF 原文件，站点内提供下载与快速阅读要点。
+
+- **站点地址**：<https://kongchaolaohei.github.io/investing-note/>
+- **构建**：MkDocs Material（配置见 `mkdocs.yml`）
+- **部署**：push 到 `main` → GitHub Actions 自动构建发布，2~3 分钟后上线。**除此之外不需要也不应该手动部署。**
+
+## 2. 目录地图
+
+```
+docs/
+├── index.md                        # 站点首页（含「最近更新」区块，重要变更时更新）
+├── guide/
+│   ├── workflow.md                 # 提问→答疑笔记 工作流（用户视角）
+│   ├── conventions.md              # 写作规范：front-matter / 命名 / 标签（AI 必读）
+│   └── local-preview.md            # 本地预览方法
+├── templates/                      # 模板（新建文件必须从此复制，不要凭空造结构）
+│   ├── entry-template.md           # 词典词条模板
+│   └── qa-template.md              # 答疑笔记模板
+├── knowledge/                      # 知识字典
+│   ├── index.md                    # 字典总索引（全词条表）
+│   ├── shared/                     # 跨市场通用概念
+│   ├── a-shares/                   # A股模块
+│   │   ├── index.md                # 模块导航 + 模块词条索引
+│   │   ├── statements/             # 三大表（总览 + 各表词条）
+│   │   └── indicators/             # 其他指标（ROE、PE、毛利率…）
+│   └── hk-stocks/                  # 港股模块（结构同上）
+├── qa/                             # 答疑笔记
+│   ├── index.md                    # 总索引（时间倒序）
+│   └── YYYY-MM/YYYY-MM-DD-slug.md  # 每次提问一个文件
+└── filings/                        # 财报档案
+    ├── index.md                    # 档案索引（公司→文件→要点）
+    └── <公司中文名>/xxx.pdf
+```
+
+## 3. 答疑工作流（收到用户投资问题后必须执行）
+
+1. **判定归属**：A股 / 港股 / 通用（shared）。跨市场的问题写入对应主模块，并在另一市场模块索引中留链接。
+2. **查重**：在对应模块的 `index.md` 词条表中确认该概念是否已有词条。
+   - **已存在** → 更新原词条（补充新内容；front-matter 的 `updated` 改为今天；"相关答疑"追加本次答疑链接）。
+   - **不存在** → 复制 `docs/templates/entry-template.md` 到对应目录创建新词条，front-matter 全部填写。
+3. **写答疑笔记**：复制 `docs/templates/qa-template.md`，保存为 `docs/qa/YYYY-MM/YYYY-MM-DD-<英文slug>.md`（日期用当天）。内容含：问题原文、结论（先答结论）、分析过程、关联词条与档案。
+4. **更新索引**（逐项检查，别漏）：
+   - `docs/qa/index.md` — 顶部（时间倒序）插入新答疑；
+   - 词条所在模块 `index.md` 的词条表 — 新增行或更新"最近更新"；
+   - `docs/knowledge/index.md` — 仅新增词条时加行；
+   - `docs/index.md` 首页「最近更新」— 每次答疑后更新（保留最近 5~10 条）。
+5. **涉及档案**：问题若引用了 `docs/filings/` 中的 PDF，用相对路径链接（如 `../filings/中国食品/2025中国食品年报.pdf`），并考虑在 `docs/filings/index.md` 补充该文件的"快速阅读要点"。
+6. **构建检查**：提交前跑 `mkdocs build --strict`，零 WARNING 再提交。
+7. **提交并推送**（用户明确说"先不推送"除外）：commit message 规范见 §5，push 到 `main` 后告知用户约 3 分钟站点更新。
+
+## 4. 硬性规则
+
+- **模板优先**：新文件一律从 `docs/templates/` 复制；front-matter 字段全部保留，没有值的写 `[]` 或 `null`，不要删字段。
+- **文件命名**：词条用小写英文 + 连字符（`balance-sheet.md`）；答疑用 `YYYY-MM-DD-slug.md`；filings 下公司目录用中文名。正文一律中文，财务术语首次出现可附英文。
+- **nav 必须同步**：`mkdocs.yml` 的 `nav` 是手工维护的，**新增页面后不同步 nav，页面上线后不会出现在导航里**。这是最容易漏的一步。
+- **不要动**：`.github/workflows/`、`mkdocs.yml` 的构建配置、`AGENTS.md` 的流程定义——除非任务本身就是改站点配置或用户明确要求。
+- **档案管理**：PDF 统一放 `docs/filings/<公司中文名>/`，登记进 `docs/filings/index.md`。单文件不要超过 50MB，更大的先和用户确认 Git LFS 方案。
+- **保密**：站点是**公开**的。不要写入个人账户、持仓成本、交易记录等敏感信息。
+- **勿提交**：`.DS_Store`、`site/`、`.venv/`、`.zcode/`（已在 `.gitignore`）。
+- **内容准则**：词条写给"半年后的自己"——结论先行、术语带链接、能指到财报具体位置就指。不确定的数据宁可不写，不要编造。
+
+## 5. 提交规范
+
+commit message 用中文，带类型前缀：
+
+| 前缀 | 用途 | 示例 |
+|---|---|---|
+| `qa:` | 新增/修改答疑笔记 | `qa: 中国食品桶装水业务毛利率问题` |
+| `entry:` | 新增/更新词典词条 | `entry: 新增港股词条「股东应占溢利」` |
+| `filing:` | 财报档案入库 | `filing: 收录中国食品 2025 年报` |
+| `site:` | 站点配置/构建 | `site: 调整首页布局` |
+| `guide:` | 指南与规范 | `guide: 补充标签体系说明` |
+| `chore:` | 其他杂项 | `chore: 更新 .gitignore` |
+
+一次答疑通常是一个 commit（可同时包含 qa + entry 的文件），主题行概括，正文列明细。
+
+## 6. 本地操作速查
+
+```bash
+# 预览（首次需建 venv，见 docs/guide/local-preview.md）
+source .venv/bin/activate && mkdocs serve   # http://127.0.0.1:8000
+
+# 严格构建（CI 同款校验，提交前必须通过）
+mkdocs build --strict
+```
+
+## 7. 延伸阅读
+
+- 写作细节（front-matter schema、标签体系、相对链接规则）：[docs/guide/conventions.md](docs/guide/conventions.md)
+- 工作流用户视角说明：[docs/guide/workflow.md](docs/guide/workflow.md)

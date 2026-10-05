@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# ZCode 会话文件
+.zcode/
+
+# MkDocs 构建产物
+site/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
