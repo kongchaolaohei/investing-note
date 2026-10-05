@@ -8,6 +8,7 @@
 | 利润表 | A股 | 三大表 | 2026-10-05 | [查看](a-shares/statements/income-statement.md) |
 | 现金流量表 | A股 | 三大表 | 2026-10-05 | [查看](a-shares/statements/cash-flow-statement.md) |
 | 港股财报结构 | 港股 | 财报结构 | 2026-10-05 | [查看](hk-stocks/statements/index.md) |
+| 港股综合损益表 | 港股 | 财报结构 | 2026-10-05 | [查看](hk-stocks/statements/income-statement.md) |
 
 ## 模块入口
 

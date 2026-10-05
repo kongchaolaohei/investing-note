@@ -76,7 +76,9 @@ nav:
           - 其他指标: knowledge/a-shares/indicators/index.md
       - 港股:
           - 模块导航: knowledge/hk-stocks/index.md
-          - 财报结构: knowledge/hk-stocks/statements/index.md
+          - 财报结构:
+              - 港股财报结构: knowledge/hk-stocks/statements/index.md
+              - 港股综合损益表: knowledge/hk-stocks/statements/income-statement.md
           - 其他指标: knowledge/hk-stocks/indicators/index.md
   - 答疑笔记: qa/index.md
   - 财报档案: filings/index.md

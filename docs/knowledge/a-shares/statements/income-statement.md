@@ -56,7 +56,7 @@ source_qa: []
 - [三大表总览](./index.md)
 - [资产负债表](./balance-sheet.md)
 - [现金流量表](./cash-flow-statement.md)
-- 港股对应"综合损益及其他全面收益表"，差异见 [港股财报结构](../../hk-stocks/statements/index.md)
+- 港股对应"综合损益及其他全面收益表"，科目勾稽与实例见 [港股综合损益表](../../hk-stocks/statements/income-statement.md)，术语差异见 [港股财报结构](../../hk-stocks/statements/index.md)
 
 ## 相关答疑
 
