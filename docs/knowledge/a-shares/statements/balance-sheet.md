@@ -50,7 +50,7 @@ source_qa: []
 - [三大表总览](./index.md)
 - [利润表](./income-statement.md)
 - [现金流量表](./cash-flow-statement.md)
-- 港股对应报表为"综合财务状况表"，结构差异见 [港股财报结构](../../hk-stocks/statements/index.md)
+- 港股对应报表为"综合财务状况表"，结构差异见 [港股财报结构](../../hk-stocks/statements/index.md)；科目实例：港股 [递延税项资产](../../hk-stocks/statements/deferred-tax-assets.md)（= A股递延所得税资产）、[预付款项](../../hk-stocks/statements/prepayments.md)（流动/非流动之分）
 
 ## 相关答疑
 
