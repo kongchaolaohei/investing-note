@@ -61,7 +61,7 @@ source_qa: []
 ## 相关词条
 
 - [港股综合损益表](./income-statement.md)（损益表科目勾稽与实例）
-- [递延税项资产](./deferred-tax-assets.md)、[预付款项](./prepayments.md)（资产负债表科目）
+- [递延税项资产](./deferred-tax-assets.md)、[预付款项](./prepayments.md)、[关联公司欠款](./related-party-balances.md)（资产负债表科目）
 - [A股三大表总览](../../a-shares/statements/index.md)（对照阅读）
 - 实例档案：[中国食品 2025 年年报](../../../filings/中国食品/2025中国食品年报.pdf)
 

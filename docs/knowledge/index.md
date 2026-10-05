@@ -11,6 +11,7 @@
 | 港股综合损益表 | 港股 | 财报结构 | 2026-10-05 | [查看](hk-stocks/statements/income-statement.md) |
 | 递延税项资产 | 港股 | 财报结构 | 2026-10-05 | [查看](hk-stocks/statements/deferred-tax-assets.md) |
 | 预付款项 | 港股 | 财报结构 | 2026-10-05 | [查看](hk-stocks/statements/prepayments.md) |
+| 关联公司欠款 | 港股 | 财报结构 | 2026-10-05 | [查看](hk-stocks/statements/related-party-balances.md) |
 
 ## 模块入口
 

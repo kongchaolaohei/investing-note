@@ -47,6 +47,7 @@ source_qa:
 ## 相关词条
 
 - [港股财报结构](./index.md)
+- [关联公司欠款](./related-party-balances.md)（同属"给出去的信用"）
 - [A股资产负债表](../../a-shares/statements/balance-sheet.md)（A股"预付款项"与"长期待摊费用"的对应关系）
 
 ## 相关答疑

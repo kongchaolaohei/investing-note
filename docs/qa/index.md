@@ -6,6 +6,7 @@
 
 | 日期 | 问题 | 市场 | 涉及词条 |
 |---|---|---|---|
+| [2026-10-05](2026-10/2026-10-05-hk-related-party-balances.md) | 关联公司欠款是什么欠款？ | 港股 | [关联公司欠款](../knowledge/hk-stocks/statements/related-party-balances.md)、[预付款项](../knowledge/hk-stocks/statements/prepayments.md) |
 | [2026-10-05](2026-10/2026-10-05-hk-deferred-tax-and-prepayments.md) | 递延税项资产是什么？预付款项为何流动/非流动都出现？ | 港股 | [递延税项资产](../knowledge/hk-stocks/statements/deferred-tax-assets.md)、[预付款项](../knowledge/hk-stocks/statements/prepayments.md) |
 | [2026-10-05](2026-10/2026-10-05-hk-pnl-line-items.md) | 港股综合损益表：收入、毛利、经营溢利到每股盈利是什么关系？ | 港股 | [港股综合损益表](../knowledge/hk-stocks/statements/income-statement.md)、[港股财报结构](../knowledge/hk-stocks/statements/index.md) |
 
