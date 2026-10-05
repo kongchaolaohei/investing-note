@@ -1,0 +1,82 @@
+site_name: 投资笔记
+site_description: 个人投资知识字典与答疑笔记（A股 / 港股）
+site_url: https://kongchaolaohei.github.io/investing-note/
+repo_url: https://github.com/kongchaolaohei/investing-note
+repo_name: kongchaolaohei/investing-note
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色模式
+
+plugins:
+  - search:
+      lang: zh
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+nav:
+  - 首页: index.md
+  - 使用指南:
+      - 提问工作流: guide/workflow.md
+      - 写作规范: guide/conventions.md
+      - 本地预览: guide/local-preview.md
+  - 知识字典:
+      - 总览: knowledge/index.md
+      - 通用概念: knowledge/shared/index.md
+      - A股:
+          - 模块导航: knowledge/a-shares/index.md
+          - 三大表:
+              - 三大表总览: knowledge/a-shares/statements/index.md
+              - 资产负债表: knowledge/a-shares/statements/balance-sheet.md
+              - 利润表: knowledge/a-shares/statements/income-statement.md
+              - 现金流量表: knowledge/a-shares/statements/cash-flow-statement.md
+          - 其他指标: knowledge/a-shares/indicators/index.md
+      - 港股:
+          - 模块导航: knowledge/hk-stocks/index.md
+          - 财报结构: knowledge/hk-stocks/statements/index.md
+          - 其他指标: knowledge/hk-stocks/indicators/index.md
+  - 答疑笔记: qa/index.md
+  - 财报档案: filings/index.md
